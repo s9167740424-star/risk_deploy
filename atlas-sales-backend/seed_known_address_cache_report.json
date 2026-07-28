@@ -1,0 +1,92 @@
+[
+  {
+    "address": "Москва, улица Кржижановского, 8к1",
+    "property_id": 1,
+    "surroundings_saved": 21,
+    "cadastral_source": "parser_unavailable",
+    "cadastral_number": null,
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Москва, улица Медынская, 5к1",
+    "property_id": 2,
+    "surroundings_saved": 21,
+    "cadastral_source": "parser_unavailable",
+    "cadastral_number": null,
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Москва, улица Твардовского, 17к1",
+    "property_id": 3,
+    "surroundings_saved": 17,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "77:08:0008011:9963",
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Москва, улица Новорязанская, 30",
+    "property_id": 4,
+    "surroundings_saved": 23,
+    "cadastral_source": "parser_unavailable",
+    "cadastral_number": null,
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Санкт-Петербург, 13-я линия Васильевского острова, 30",
+    "property_id": 5,
+    "surroundings_saved": 21,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "78:06:0002049:16",
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Санкт-Петербург, улица Антонова-Овсеенко, 21",
+    "property_id": 6,
+    "surroundings_saved": 19,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "78:12:0006308:17",
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Санкт-Петербург, Константиновский проспект, 26",
+    "property_id": 7,
+    "surroundings_saved": 22,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "78:07:0003269:1",
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Санкт-Петербург, Морская набережная, 33",
+    "property_id": 8,
+    "surroundings_saved": 21,
+    "cadastral_source": "parser_unavailable",
+    "cadastral_number": null,
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Екатеринбург, улица Куйбышева, 74",
+    "property_id": 9,
+    "surroundings_saved": 22,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "66:41:0601031:50",
+    "offices_failed": true,
+    "mfc_count": 0
+  },
+  {
+    "address": "Екатеринбург, Заводская улица, 34",
+    "property_id": 10,
+    "surroundings_saved": 22,
+    "cadastral_source": "existing_legal_data",
+    "cadastral_number": "66:41:0303066:35",
+    "offices_failed": true,
+    "mfc_count": 0
+  }
+]

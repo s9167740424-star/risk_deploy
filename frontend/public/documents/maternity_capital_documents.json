@@ -1,0 +1,18 @@
+{
+  "code": "maternity_capital_documents",
+  "title": "Документы по использованию материнского капитала",
+  "note": [
+    "Нужны для проверки обстоятельств приобретения объекта с материнским капиталом."
+  ],
+  "required": false,
+  "sourceId": "on_hand",
+  "algorithmId": "maternal_capital",
+  "articleId": null,
+  "conditions": [
+    {
+      "questionId": "maternityCapital",
+      "value": "yes"
+    }
+  ],
+  "order": 100
+}

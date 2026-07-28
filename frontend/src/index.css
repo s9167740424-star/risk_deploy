@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-primary-dark transition-all duration-200 
+           shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-6 py-3 
+           rounded-lg font-semibold hover:bg-primary hover:text-white 
+           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply text-text-secondary hover:text-primary transition-colors 
+           duration-200 font-medium;
+  }
+
+  .card {
+    @apply bg-surface rounded-xl border-2 border-border shadow-md 
+           hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-border 
+           bg-surface text-text-primary placeholder:text-text-muted 
+           focus:outline-none focus:ring-2 focus:ring-primary/30 
+           focus:border-primary transition-all duration-200;
+  }
+}
+
+.docx-viewer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.docx-viewer table {
+  width: auto !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+}
+
+.docx-viewer td,
+.docx-viewer th {
+  padding: 8px 10px !important;
+  border: 1px solid #ddd !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  max-width: 70px !important;
+}

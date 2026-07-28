@@ -1,0 +1,102 @@
+[
+  {
+    "address": "Москва, улица Кржижановского, 8к1",
+    "latitude": 55.681854,
+    "longitude": 37.564132,
+    "surroundings_saved": 21,
+    "pluses": 12,
+    "minuses": 9,
+    "legal_saved": false,
+    "cadastral_number": null
+  },
+  {
+    "address": "Москва, улица Медынская, 5к1",
+    "latitude": 55.589921,
+    "longitude": 37.648438,
+    "surroundings_saved": 21,
+    "pluses": 9,
+    "minuses": 12,
+    "legal_saved": false,
+    "cadastral_number": null
+  },
+  {
+    "address": "Москва, улица Твардовского, 17к1",
+    "latitude": 55.795246,
+    "longitude": 37.40018,
+    "surroundings_saved": 17,
+    "pluses": 10,
+    "minuses": 7,
+    "legal_saved": true,
+    "cadastral_number": "77:08:0008011:9963"
+  },
+  {
+    "address": "Москва, улица Новорязанская, 30",
+    "latitude": 55.771504,
+    "longitude": 37.667806,
+    "surroundings_saved": 23,
+    "pluses": 12,
+    "minuses": 11,
+    "legal_saved": false,
+    "cadastral_number": null
+  },
+  {
+    "address": "Санкт-Петербург, 13-я линия Васильевского острова, 30",
+    "latitude": 59.93964,
+    "longitude": 30.272093,
+    "surroundings_saved": 21,
+    "pluses": 12,
+    "minuses": 9,
+    "legal_saved": true,
+    "cadastral_number": "78:06:0002049:16"
+  },
+  {
+    "address": "Санкт-Петербург, улица Антонова-Овсеенко, 21",
+    "latitude": 59.909048,
+    "longitude": 30.473648,
+    "surroundings_saved": 19,
+    "pluses": 11,
+    "minuses": 8,
+    "legal_saved": true,
+    "cadastral_number": "78:12:0006308:17"
+  },
+  {
+    "address": "Санкт-Петербург, Константиновский проспект, 26",
+    "latitude": 59.972897,
+    "longitude": 30.26735,
+    "surroundings_saved": 22,
+    "pluses": 12,
+    "minuses": 10,
+    "legal_saved": true,
+    "cadastral_number": "78:07:0003269:1"
+  },
+  {
+    "address": "Санкт-Петербург, Морская набережная, 33",
+    "latitude": 59.958827,
+    "longitude": 30.218751,
+    "surroundings_saved": 21,
+    "pluses": 12,
+    "minuses": 9,
+    "legal_saved": false,
+    "cadastral_number": null
+  },
+  {
+    "address": "Екатеринбург, улица Куйбышева, 74",
+    "latitude": 56.829995,
+    "longitude": 60.633434,
+    "surroundings_saved": 22,
+    "pluses": 12,
+    "minuses": 10,
+    "legal_saved": true,
+    "cadastral_number": "66:41:0601031:50"
+  },
+  {
+    "address": "Екатеринбург, Заводская улица, 34",
+    "latitude": 56.833142,
+    "longitude": 60.551615,
+    "surroundings_saved": 22,
+    "pluses": 10,
+    "minuses": 12,
+    "legal_saved": true,
+    "cadastral_number": "66:41:0303066:35"
+  }
+]

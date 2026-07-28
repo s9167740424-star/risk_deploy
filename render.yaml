@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: riskcheck
+    runtime: python
+    plan: free
+    buildCommand: "./render-build.sh"
+    startCommand: "cd atlas-sales-backend && gunicorn wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.6"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: "sqlite:////opt/render/project/src/atlas-sales-backend/atlas.db"
+      - key: ROSREESTR_PARSER_ENABLED
+        value: "0"
+      - key: ROSREESTR_PARSER_AUTOSTART
+        value: "0"
+      - key: GEO_SEARCH_RADIUS
+        value: "1500"
+      - key: YANDEX_GEOCODER_KEY
+        sync: false
+      - key: YANDEX_JS_API_KEY
+        sync: false

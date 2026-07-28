@@ -1,0 +1,14 @@
+{
+  "code": "passport_rf",
+  "title": "Паспорт гражданина РФ",
+  "note": [
+    "Удостоверяет личность продавца недвижимости и всех собственников.",
+    "Внутренний документ: есть у вас на руках."
+  ],
+  "required": false,
+  "sourceId": "on_hand",
+  "algorithmId": null,
+  "articleId": null,
+  "conditions": null,
+  "order": 1
+}
