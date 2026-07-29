@@ -1,4 +1,5 @@
 services:
+  # --- Основной сайт: Flask API + собранный фронтенд ---
   - type: web
     name: riskcheck
     runtime: python
@@ -12,13 +13,34 @@ services:
         generateValue: true
       - key: DATABASE_URL
         value: "sqlite:////opt/render/project/src/atlas-sales-backend/atlas.db"
-      - key: ROSREESTR_PARSER_ENABLED
-        value: "0"
-      - key: ROSREESTR_PARSER_AUTOSTART
-        value: "0"
       - key: GEO_SEARCH_RADIUS
         value: "1500"
       - key: YANDEX_GEOCODER_KEY
         sync: false
       - key: YANDEX_JS_API_KEY
         sync: false
+      - key: ROSREESTR_PARSER_ENABLED
+        value: "1"
+      - key: ROSREESTR_PARSER_AUTOSTART
+        value: "0"
+      - key: ROSREESTR_PARSER_TIMEOUT
+        value: "90"
+      # ВАЖНO: сюда вручную впишешь публичный адрес парсера после его деплоя,
+      # вида https://rosreestr-parser-XXXX.onrender.com  (см. инструкцию)
+      - key: ROSREESTR_PARSER_URL
+        sync: false
+
+  # --- Парсер НСПД: FastAPI + Playwright/Chromium ---
+  - type: web
+    name: rosreestr-parser
+    runtime: python
+    plan: free
+    buildCommand: "./parser-build.sh"
+    startCommand: "cd atlas-sales-backend/rosreestr-parser && python main.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.6"
+      - key: PARSER_NAV_TIMEOUT
+        value: "60000"
+      - key: PARSER_RESULT_TIMEOUT
+        value: "30000"

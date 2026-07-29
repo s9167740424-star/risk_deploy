@@ -516,11 +516,9 @@ const Step1Page: React.FC = () => {
         if (cancelled) return;
         setOverviewPins(pins);
 
-        const hasSelection =
-          restored ||
-          Boolean(useAppStore.getState().step1Snapshot?.selectedProperty) ||
-          Boolean(useAppStore.getState().selectedLocation);
-        if (!hasSelection) showOverview(pins, center);
+        // При входе не центрируем карту по демо-объектам и не показываем обзор —
+        // карта остаётся на дефолтном центре (Москва). Объекты подхватываются,
+        // когда пользователь сам ищет или выбирает адрес.
       } catch {
         if (!cancelled) setLoadError('Не удалось загрузить объекты с сервера');
       } finally {

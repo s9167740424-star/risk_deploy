@@ -222,8 +222,3 @@ riskcheck.db
 frontend/node_modules/
 .DS_Store
 **/.DS_Store
-
-# render deploy extras
-atlas-sales-backend/static/spa/
-frontend/dist/
-*.db
