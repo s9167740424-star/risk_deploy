@@ -12,3 +12,4 @@ pip install -r requirements-render.txt
 cd atlas-sales-backend
 flask --app run.py seed-demo
 flask --app run.py seed-content
+python seed_main_from_existing_json.py
