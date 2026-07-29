@@ -56,13 +56,48 @@ class DemoPropertyProvider:
         q = (query or "").strip()
         if not q:
             return None
+        # 1) прямой подстрочный матч: адрес в базе содержит запрос
         item = db.session.scalar(
             db.select(Property)
             .where(Property.address.ilike(f"%{q}%"))
             .order_by(Property.id)
             .limit(1)
         )
-        return _from_model(item) if item else None
+        if item:
+            return _from_model(item)
+        # 2) обратный и нечёткий матч: геокодер часто добавляет "Россия, ",
+        #    город и т.п., поэтому сравниваем по значимым токенам адреса.
+        import re
+
+        def norm(s: str) -> str:
+            s = (s or "").lower().replace("ё", "е")
+            return re.sub(r"[^0-9a-zа-я]+", " ", s).strip()
+
+        qn = norm(q)
+        # выкидываем частые префиксы-шумы
+        stop = {"россия", "город", "г", "ул", "улица", "проспект", "пр", "д", "дом",
+                "линия", "набережная", "наб", "проезд", "переулок", "пер", "к", "корпус"}
+        q_tokens = [t for t in qn.split() if t and t not in stop]
+        if not q_tokens:
+            return None
+        best = None
+        best_score = 0
+        for candidate in db.session.scalars(
+            db.select(Property).order_by(Property.id)
+        ).all():
+            an = norm(candidate.address)
+            # прямое вхождение в любую сторону — сильный сигнал
+            if an and (an in qn or qn in an):
+                return _from_model(candidate)
+            a_tokens = set(an.split())
+            score = sum(1 for t in q_tokens if t in a_tokens)
+            if score > best_score:
+                best_score = score
+                best = candidate
+        # требуем совпадения хотя бы двух значимых токенов (напр. "твардовского" + "17")
+        if best is not None and best_score >= 2:
+            return _from_model(best)
+        return None
     def lookup_by_id(self, property_id: int) -> PropertyLookupResult | None:
         item = db.session.get(Property, property_id)
         return _from_model(item) if item else None

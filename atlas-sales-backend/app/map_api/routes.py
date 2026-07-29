@@ -262,18 +262,26 @@ def geo_lookup():
     surroundings = build_surroundings(found["lat"], found["lon"], radius)
 
     local_property = None
+    local_prop_obj = None
     try:
         prop = get_property_provider().lookup_by_address(query)
         if prop is not None:
+            local_prop_obj = prop
             local_property = prop.to_dict()
     except Exception:
         local_property = None
+        local_prop_obj = None
 
     cadastral = None
     cadastral_error = None
     cadastral_message = None
 
-    if local_property is None and request.args.get("cadastral", "1") != "0":
+    # Если объект найден в базе и у него есть сохранённый кадастр — отдаём его,
+    # не обращаясь к живому парсеру НСПД.
+    if local_prop_obj is not None:
+        cadastral = _fallback_cadastral_from_property(local_prop_obj)
+
+    if cadastral is None and local_property is None and request.args.get("cadastral", "1") != "0":
         try:
             parsed = parse_by_coords(found["lat"], found["lon"])
             if parsed is not None:

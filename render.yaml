@@ -24,7 +24,7 @@ services:
       - key: ROSREESTR_PARSER_AUTOSTART
         value: "0"
       - key: ROSREESTR_PARSER_TIMEOUT
-        value: "90"
+        value: "120"
       # ВАЖНO: сюда вручную впишешь публичный адрес парсера после его деплоя,
       # вида https://rosreestr-parser-XXXX.onrender.com  (см. инструкцию)
       - key: ROSREESTR_PARSER_URL
@@ -40,7 +40,9 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.6"
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: "/opt/render/project/src/.playwright"
       - key: PARSER_NAV_TIMEOUT
-        value: "60000"
+        value: "90000"
       - key: PARSER_RESULT_TIMEOUT
-        value: "30000"
+        value: "40000"
